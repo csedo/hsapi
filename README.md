@@ -49,8 +49,6 @@ $request->authenticate('api_username', 'api_password', 'api_key');
 
 We provide two output formats: JSON and XML.
 To change the output format, use the `setOutputFormat` method.
-You can disable the output format by using the `setOutputFormat` method with an empty string.
-
 ```php
 $request->setOutputFormat('json'); // or 'xml', default is 'json'
 ```
@@ -58,7 +56,7 @@ Use this method before the `send()` method.
 
 ## Usage
 ```php
-$request = new RequestGenerator('products', 'json');
+$request = new RequestGenerator('products');
 $request->authenticate('api_username', 'api_password', 'api_key');
 
 $response = $request->send();
