@@ -1,0 +1,24 @@
+{
+  "name": "hscore/hsapi",
+  "description": "REST api for B2B partners of Hifi Station Kft.",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "Kelcz Dávid",
+      "email": "kelcz.david@hifi-station.hu"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "hscore\\": "src"
+    }
+  },
+  "require": {
+    "php" : ">=7.4",
+    "ext-openssl": "*",
+    "ext-simplexml": "*",
+    "ext-json": "*"
+  }
+}
