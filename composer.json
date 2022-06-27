@@ -2,8 +2,8 @@
   "name": "hscore/hsapi",
   "description": "REST api for B2B partners of Hifi Station Kft.",
   "minimum-stability": "stable",
-  "license": "proprietary",
-  "version": "1.0.0",
+  "license": "MIT",
+  "version": "1.0.1",
   "authors": [
     {
       "name": "Kelcz Dávid",
