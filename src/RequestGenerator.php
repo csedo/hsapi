@@ -41,7 +41,7 @@ class RequestGenerator
 
     private function generateHeader()
     {
-        if($this->disablePrettyHeader){
+        if(!$this->disablePrettyHeader){
             if($this->response_type == 'xml'){
                 header('Content-Type: application/xml');
             } else {
