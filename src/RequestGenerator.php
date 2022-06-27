@@ -12,30 +12,21 @@ class RequestGenerator
     private string $api_key;
 
     private string $request;
-    private string $response_type;
+    private string $response_type = 'json';
     public bool $disablePrettyHeader = false;
 
     public function __construct($request = 'products')
     {
         $this->request = $request;
-
-
-
-
     }
 
-    public function setOutputFormat($response_type = 'json')
+    public function setOutputFormat($response_type)
     {
-        if($this->disablePrettyHeader){
-            if($response_type == 'xml'){
-                header('Content-Type: application/xml');
-            } else {
-                header('Content-Type: application/json');
-            }
-
+        if(!in_array($response_type, ['json', 'xml'])) {
+            throw new \Exception('Invalid response type');
         }
-        $this->response_type = $response_type;
 
+        $this->response_type = $response_type;
     }
 
     private function getRequestMethod()
@@ -50,6 +41,14 @@ class RequestGenerator
 
     private function generateHeader()
     {
+        if($this->disablePrettyHeader){
+            if($this->response_type == 'xml'){
+                header('Content-Type: application/xml');
+            } else {
+                header('Content-Type: application/json');
+            }
+        }
+
         $options = [
             'http' => [
                 'method' => $this->getRequestMethod(),
@@ -104,7 +103,4 @@ class RequestGenerator
             throw new \Exception('OpenSSL extension must be enabled.');
         }
     }
-
-
-
 }
