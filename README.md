@@ -64,6 +64,10 @@ $response = $request->send();
 echo $response;
 ```
 
+### Other informations
+Note, that the API is not stable yet. 
+In the result the `stock` tag is not always correct. If we have more than 10 product in stock the value always will be 10.
+
 ### Functions
 
 `send()` return the response in the format you specified.
@@ -76,3 +80,8 @@ echo $response;
 
 ## Security
 Please submit bug reports, or you found a mistake in the docs, or want to add something suggestions create a pull request or go ahead and create an issue at [Github issue tracker](https://github.com/csedo/hsapi/issues "Github issue tracker")
+
+## Disclaimer
+
+This is an open source project. We are not responsible for any damage caused by this software.
+If you want to update the prices of the product automatically, please note that it may differ from the price you offer.
