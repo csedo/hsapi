@@ -23,7 +23,7 @@ You need to write your own code to connect to your system.
 * JSON/XML REST output
 
 ## Installation
-    "hsapi/hsapi": "*"
+    "hscore/hsapi": "*"
 
 or run
 
