@@ -12,7 +12,7 @@ You need to write your own code to connect to your system.
 
 * PHP 7.4
 * Composer
-* ext-openssl: * 
+* ext-openssl: *
 * ext-simlexml: *
 * ext-json: *
 
@@ -24,7 +24,6 @@ You need to write your own code to connect to your system.
 
 ## Installation
     "hscore/hsapi": "*"
-
 or run
 
     composer require hscore/hsapi
@@ -40,6 +39,15 @@ require 'path/to/src/RequestGenerator.php'; /* or wherever the file is located *
 ## Authentication
 
 In order to use the API you need to authenticate. You can do this by using the `authenticate` method.
+
+We prepared a simlified authentication method.
+
+You can use the authentication credentails in the following way:
+`https://api.hifi-station.hu/v2/products?username=USERNAME&password=PASSWORD&api_key=API_KEY`
+In the email that we send you after a successful registration copy the data and change the UPPERCASE strings.
+You can change the output (JSON or XML) by adding the extension to "products".
+`https://api.hifi-station.hu/v2/products.xml` or `json`
+
 
 ```php
 $request->authenticate('api_username', 'api_password', 'api_key');
@@ -65,7 +73,7 @@ echo $response;
 ```
 
 ### Other informations
-Note, that the API is not stable yet. 
+Note, that the API is not stable yet.
 In the result the `stock` tag is not always correct. If we have more than 10 product in stock the value always will be 10.
 
 ### Functions

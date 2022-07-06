@@ -96,8 +96,8 @@ class RequestGenerator
     }
 
     private function requirementsCheck(){
-        if(version_compare(PHP_VERSION, '7.1.0', '<')) {
-            throw new \Exception('PHP version must be >= 7.1.0');
+        if(version_compare(PHP_VERSION, '7.4.0', '<')) {
+            throw new \Exception('PHP version must be >= 7.4.0');
         }
         if(!extension_loaded('openssl')) {
             throw new \Exception('OpenSSL extension must be enabled.');
